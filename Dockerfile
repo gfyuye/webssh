@@ -15,4 +15,4 @@ RUN \
 
 EXPOSE 8888/tcp
 USER webssh
-ENTRYPOINT ["python", "run.py"]
+CMD ["python", "run.py"]
