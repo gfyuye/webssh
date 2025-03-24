@@ -29,7 +29,6 @@ jobs:
         platforms: linux/amd64,linux/arm64
         push: true
         tags: docker.io/gfyuye/webssh:latest
-#        file: ./readerwithoutv2ray/Dockerfile  # 指定Dockerfile的位置，如果和默认位置一样则可以省略这行
 
     
     - name: Logout from  Container Registry
