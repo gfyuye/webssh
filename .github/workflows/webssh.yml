@@ -18,7 +18,7 @@ jobs:
     - name: Login to Container Registry
       uses: docker/login-action@v1 
       with:
-        registry: crpi-bf2ozvgu6gposfxy.ap-northeast-1.personal.cr.aliyuncs.com
+        registry: docker.io
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
         
@@ -28,10 +28,10 @@ jobs:
         context: .
         platforms: linux/amd64,linux/arm64
         push: true
-        tags: crpi-bf2ozvgu6gposfxy.ap-northeast-1.personal.cr.aliyuncs.com/gfyuye/webssh:latest
+        tags: docker.io/gfyuye/webssh:latest
 #        file: ./readerwithoutv2ray/Dockerfile  # 指定Dockerfile的位置，如果和默认位置一样则可以省略这行
 
     
     - name: Logout from  Container Registry
       if: always()  # 无论成功或失败都执行这一步以确保安全登出
-      run: docker logout crpi-bf2ozvgu6gposfxy.ap-northeast-1.personal.cr.aliyuncs.com
+      run: docker logout docker.io 
